@@ -55,15 +55,42 @@
 
     // Set these variables to their DOM elements
 
-    const coffeeImage = document.querySelector('#coffee-image');
-    coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
+const coffeeImage = document.querySelector('#coffee-image');
+coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
 
 
-    function makeCoffee(){
-        coffeeImage.setAttribute('src', 'static/coffee_mug.jpg');
-    }
+function makeCoffee() { 
+  setTimeout(() => {
+    coffeeImage.setAttribute('src', 'static/coffee_machine.jpg'); 
+  }, 1500);
 
-    coffeeImage.addEventListener('click', makeCoffee);
+  setTimeout(() => {
+    coffeeImage.setAttribute('src', 'static/coffee_mug.jpg');
+  }, 2500);
+
+  coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
+}
+
+
+function coffeeMachineImageTimeout() {
+  setTimeout(coffeeImage.setAttribute('src', 'static/coffee_machine.jpg'), 1500);
+}
+
+// function makeCoffee() {
+//   setTimeout(() => {
+//     setTimeout(coffeeImage.setAttribute('src', 'static/coffee_machine.jpg'),
+//       coffeeImage.setAttribute('src', 'static/coffee_mug.jpg')
+//     }, 1500);
+//     }, 2500);
+  
+ 
+  
+//   coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
+// }
+
+// // setTimeout(coffeeImage.setAttribute('src', 'static/coffee_machine.jpg'), 1500);
+
+coffeeImage.addEventListener('click', makeCoffee);
 
 // const revenueMessage;
 
